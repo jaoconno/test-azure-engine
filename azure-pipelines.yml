@@ -1,0 +1,43 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+- task: PowerShell@2
+  displayName: Generate Version Variable
+  name: versionVar
+  inputs:
+    targetType: 'inline'
+    script: |
+      [xml]$nuXML = Get-Content .\assetexplorer.nuspec
+      $OriginalVersion = $nuXML.package.metadata.version
+      $gitHash = "$(Build.SourceVersion)"
+      $shortHash = $gitHash.Substring(0,6)
+      $NuVersion = "$OriginalVersion-G$shortHash"
+      
+      #update version
+      $nuXML.package.metadata.version = $NuVersion
+      $nuXML.Save(".\assetexplorer.nuspec")
+      echo "NuVersion $NuVersion"
+
+- task: PowerShell@2
+  name: choco_pack
+  inputs:
+    targetType: 'inline'
+    script: 'choco pack'
+    failOnStderr: true
+
+- task: NuGetCommand@2
+  name: publish_nupkg_to_feed
+  inputs:
+    command: 'push'
+    packagesToPush: './*.nupkg;!./*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '$(nuget-feed-name)'

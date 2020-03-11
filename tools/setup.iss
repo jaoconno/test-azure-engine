@@ -1,0 +1,49 @@
+[InstallShield Silent]
+Version=v7.00
+File=Response File
+[File Transfer]
+OverwrittenReadOnly=NoToAll
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-DlgOrder]
+Dlg0={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdWelcome-0
+Count=9
+Dlg1={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdLicense-0
+Dlg2={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-CustomEditionSelection-20320
+Dlg3={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdAskDestPath-0
+Dlg4={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-MessageBox-0
+Dlg5={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-AskText-0
+Dlg6={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdShowMailPanel-20319
+Dlg7={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdSelectFolder-0
+Dlg8={5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdFinish-0
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdWelcome-0]
+Result=1
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdLicense-0]
+Result=1
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-CustomEditionSelection-20320]
+Result=1
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdAskDestPath-0]
+szDir=C:\Program Files\ManageEngine\AssetExplorer
+Result=1
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-MessageBox-0]
+Result=1
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-AskText-0]
+szText=8080
+Result=1
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdShowMailPanel-20319]
+Name=' '
+MailId=' '
+Phone=' '
+Company=' '
+Country=-Select-
+Result=2
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdSelectFolder-0]
+szFolder=ManageEngine AssetExplorer
+Result=1
+[Application]
+Name=ManageEngine AssetExplorer
+Version=6.7.0
+Company=ManageEngine
+Lang=0409
+[{5F637ECE-E6E5-4F3B-8780-D26B379E9296}-SdFinish-0]
+Result=1
+bOpt1=0
+bOpt2=0
